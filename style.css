@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* manage default behave*/
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  user-zoom: fixed;
+  box-sizing: border-box;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+:root {
+  --primary-color: #45454D;
+  --header-color: #262629;
+  --thickness-color: #535354;
+  --color: #DBE7F0;
+  
+}
+
+
+body {
+  background: var(--primary-color);
+}
+
+.main_page_todo {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 15px 20px 15px;
+  height: 100dvh;
+}
+
+/* inserting section */
+.inserting_items .adding {
+  margin-bottom: 25px !important;
+}
+
+.inserting_items .adding,
+.searching_filtering {
+  display: flex;
+  align-items: center;
+  margin: 8px auto;
+  justify-content: space-between;
+}
+
+.inserting_items .adding .input_area {
+  width: 100%;
+}
+
+.inserting_items .adding .input_area input {
+  width: 100%;
+  padding: 8px;
+  font-size: .9rem;
+  outline: none;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--color);
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid #D9DDDE;
+  word-wrap: wrap;
+  transition: all .3s ease;
+}
+
+.inserting_items .adding .input_area input:focus,
+.searching input:focus {
+  border: 1px solid #05ABD5;
+  box-shadow: 0 0 0 3px #06B9E669;
+  
+}
+
+.inserting_items .adding .input_area input::placeholder {
+  font-size: .9rem;
+  font-weight: 500;
+  color: #DBE7F0A1;
+  letter-spacing: .05em;
+  
+}
+
+.searching input::placeholder {
+  color: #DBE7F0A1;
+  
+}
+
+.add_task button {
+  padding: 9px 30px;
+  margin-left: 7px;
+  background: #3AC364;
+  border-radius: 6px;
+  border: none;
+  color: #F0F5F9;
+  font-size: .93em;
+  font-weight: 500;
+  letter-spacing: .35px;
+  outline: none;
+  transition: .3s;
+}
+
+.add_task button:active {
+  transform: scale(.91);
+}
+
+
+.searching {
+  width: 200px;
+}
+
+.searching input {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #B2B2B2;
+  outline: none;
+  border-radius: 8px;
+  letter-spacing: .3px;
+  font-size: .9em;
+  color: var(--color);
+  font-weight: 400;
+  background: transparent;
+  transition: all .3s ease;
+}
+
+.filter {
+  padding: 5px 10px;
+}
+
+.filter span {
+  color: #E1E4E8;
+}
+
+
+/* inserted area*/
+.inserted_items {
+  width: 100%;
+  height: 85dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-top: 1px solid grey;
+  margin-top: 18px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+
+header about programmer logo .Programmer {
+  border-bottom: 1px solid grey;
+  margin-bottom: 8px;
+}
+
+.Programmer p {
+  text-align: center;
+  padding: 0 0 10px 0;
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: .3px;
+  position: relative;
+  background: linear-gradient(48deg, #03CF6D, #CFAB03, #9E09D6, #CFAB03, #03CF6D);
+  background-size: 200%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: blow 4s ease-in-out infinite;
+}
+
+.Programmer p::before {
+  position: absolute;
+  content: "CodPro CS";
+  background: linear-gradient(48deg, #03CF6D, #CFAB03, #9E09D6, #CFAB03, #03CF6D);
+  background-size: 200%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  filter: blur(4px);
+  animation: blow 4s ease-in-out infinite;
+}
+
+@keyframes blow {
+  to {
+    background-position: 200%;
+  }
+}
+
+
+/* js listed class */
+.newQuery {}
+
+.mainDiv {
+  border: 1px solid #9FA3A4;
+  border-radius: 8px;
+  padding: 8px 3px 5px 8px;
+  width: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 7fr 1fr;
+  margin: 5px auto;
+  grid-template-rows: auto auto;
+}
+
+.mainDiv .newQuery {
+  color: papayawhip;
+  letter-spacing: .3px;
+  font-size: 1em;
+}
+
+.mainDiv .removeTask {
+  grid-row: span 2;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  color: #DA5900;
+  filter: drop-shadow(0 0 3px #DA5900);
+}
+
+.mainDiv .time {
+  color: #A0A6A7;
+}
+
+.mainDiv .time,
+.removeTask {
+  padding: 5px;
+}
+
+.error,
+.addedTask,#deleteTask{
+  position: absolute;
+  display: flex;
+  letter-spacing: .35px;
+  font-weight: 400;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, .13);
+  border-radius: 6px;
+  padding: 15px 0;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 30px);
+}
+
+.error span,
+.addedTask span,#deleteTask span {
+  margin: auto 5px;
+}
+
+.error {
+  background: #DCD2CB;
+  border: 1px solid #E89254;
+  color: #CB5A0A;
+}
+
+.addedTask {
+  background: #D5E5D9;
+  border: 1px solid #1BC247;
+  color: #027621;
+}
+#deleteTask{
+  background: #E5E1D5;
+border: 1px solid #BE9826;
+color: #D3A004;
+}
+.filterPanel{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid #B9B9B9;
+  border-radius: 15px;
+  top: 115px;
+  right: 15px;
+  box-shadow: 0 10px 13px rgba(0, 0, 0, .13);
+  z-index: 5;
+}
+.filterPanel div{
+  width: 100%;
+}
+.filterPanel .button{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+#closeBtn{
+  font-size: 1em;
+background: transparent;
+color: #FED5D5;
+border: none;
+outline: none;
+font-size: 1.1em;
+}
+.filterInput{
+  border-bottom: 1px solid #C0C0C0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filterInput #dateFind{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 7px 3px;
+  letter-spacing: .6px;
+  font-size: 1.1em;
+  color: #9AAAA5;
+}
+#calLogo{
+  color: #C0C0C0
+}
+.theme{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  padding-right: 1px;
+}
+.theme label{
+  color: #C0C0C0
+}
+.theme input{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 18px;
+  outline:1px solid #C0C0C0;
+  outline-offset: 1px;
+  border-radius: 15px;
+  position: relative;
+  background: #8C8C8C;
+transition: 0.3s ease all;
+}
+.theme input:checked{
+  background: #687870;
+  transition: 0.3s ease all;
+}
+.theme input::before{
+  height: inherit;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  top: 0;left:0;
+  background: #323434;
+  content:'';
+  position: absolute;
+  transition: 0.3s ease all;
+}
+.theme input:checked::before{
+  left: calc(35px - 18px); 
+  background: #0AE581;
+  transition: 0.3s ease all;
+}
